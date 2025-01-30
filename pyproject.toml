@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "finances"
+version = "0.1.0"
+description = ""
+authors = ["Andrey B <TakeItEasyO@yandex.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.6"
+uvicorn = "0.21.0"
+pydantic-settings = "^2.7.1"
+asyncpg = "^0.30.0"
+ruff = "^0.8.5"
+sqlalchemy = "^2.0.36"
+pydantic = {extras = ["email"], version = "^2.10.4"}
+python-multipart = "^0.0.20"
+pyjwt = "^2.10.1"
+bcrypt = "4.0.1"
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+alembic = "^1.14.0"
+websockets = "^14.1"
+pytest = "^8.3.4"
+httpx = "^0.28.1"
+pytest-asyncio = "^0.25.2"
+psycopg2-binary = "^2.9.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests/",
+]
+asyncio_default_fixture_loop_scope = "session"
+asyncio_mode = "auto"  # See pytest-asyncio plug-in
