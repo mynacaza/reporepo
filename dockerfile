@@ -5,11 +5,18 @@ WORKDIR /app
 COPY app/ /app/
 COPY pyproject.toml poetry.lock /app/
 
+ENV PATH="/root/.local/bin:$PATH"
 
-RUN python -m pip install --no-cache-dir poetry==1.8.5
+RUN apt-get update && apt-get install -y curl
+
+RUN curl -sSL https://install.python-poetry.org | python3 -
 RUN poetry config virtualenvs.create false
+
+RUN touch README.md
 RUN poetry install --no-interaction --no-ansi --verbose
 RUN rm -rf $(poetry config cache-dir)/{cache,artifacts}
+
+
 
 EXPOSE 5000
 

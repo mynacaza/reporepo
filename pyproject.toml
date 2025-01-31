@@ -3,6 +3,7 @@ name = "finances"
 version = "0.1.0"
 description = ""
 authors = ["Andrey B <TakeItEasyO@yandex.com>"]
+package-mode = false
 readme = "README.md"
 
 [tool.poetry.dependencies]
