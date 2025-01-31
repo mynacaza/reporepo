@@ -7,7 +7,7 @@ COPY pyproject.toml poetry.lock /app/
 
 ENV PATH="/root/.local/bin:$PATH"
 
-RUN pip install poetry
+RUN pip install poetry && poetry install --no-root
 RUN poetry config virtualenvs.create false
 
 RUN touch README.md
