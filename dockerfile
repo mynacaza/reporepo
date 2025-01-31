@@ -7,8 +7,6 @@ COPY pyproject.toml poetry.lock /app/
 
 ENV PATH="/root/.local/bin:$PATH"
 
-RUN apt-get update && apt-get install -y curl
-
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
 
